@@ -60,10 +60,10 @@ function Show-AnsiCodes {
         [switch]$Deco, [switch]$Cursor, [switch]$Color8Bit,
         [switch]$Color4Bit, [switch]$FG4Bit, [switch]$BG4Bit,
         [Parameter(ValueFromRemainingArguments)]
-        [Alias("Language")][string]$Lang
+        [Alias("Lang")][string]$Language
     )
 
-    $esc = switch ($Lang.ToLower()) {
+    $esc = switch ($Language.ToLower()) {
         {@('c#', '.net', 'csharp') -contains $_} {'\x1b'}
         Default                                  {'  `e'}                  
     }
